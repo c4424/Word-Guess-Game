@@ -2,26 +2,148 @@
 <html>
     <head>        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="C:\Users\c4424\Desktop\Word-Guess-Game\assets\CSS\style.css">        
+        <link rel="stylesheet" type="text/css" href="C:\Users\c4424\Desktop\Word-Guess-Game\assets\CSS\style.css"> 
     </head>
+    
         <title>SOCCER GAME</title>
+        <br>
+        <br>
         <div><h1>SOCCER WORD GUESS GAME</h1></div>
         <br>
 
     <body>    
         <div class="container">
+            <br>
+            
             <div class="row">
                 <div class="col">
                     <img src="assets\Images\image1.png">
                 </div>
-                <div class="col">
-                <br>
+
+                <div class="col">  
+                    <br>                                 
                     <p>He currently plays at F.C. Barcelona.</p>
                     <p>He has won the Ballon D'or a record of 5 times.</p>
-                    <p>He was born in Argentina.</p>
-                </div>
-        </div>
+                    <p>He was born in Argentina.</p>                    
+                    <p>____________________________</p>
+                    <p>GUESS THE NAME OF THIS PLAYER</p>
 
+                    <p><strong>You just typed . . .</strong></p>
+                    <input>
+                    <P>_____</P>
+                </div>
+            </div>
+           
+        </div>
+         
+
+<script type="text/javascript">
+
+        
+var $ = function (id) {
+    return document.getElementById(id);
+}
+
+    
+
+        var players = ["messi"];
+
+        var lettersInChosenWord = ["m", "e", "s", "i"]
+
+        var choice = math.floor(math.random()*4);
+
+        var answer = player[choice];
+
+        var myLength = answer.length;
+
+        var display = [myLength];
+
+        var win = myLength;
+
+        var letters = answer.split(" ");
+
+        var attemptsLeft = 10;
+
+        var output = " ";
+
+        var userLetter = " "; 
+
+
+        var setup = function() {
+            for(var i=0; i<answer.length; i++) {
+                display[i] = "_ ";
+                output = output + display[i];
+            }
+            document.getElementById("players").innerHTML = output;
+            output = "";
+        }
+
+        
+        var submit = function() {
+            output = "";
+            userLetter = $("letter").value;
+            $("letter").value = "";
+
+            for (var c=0; c< answer.length; c++){
+                alert(letters[c]);
+                if (userLetter.toUpperCase() == letters[c]){
+                    display[c] = userLetter.toUpperCase();
+                    win--;
+                }
+                    output = output + display [c] + " ";
+            }
+            document.getElementById("game").innerHTML = output;
+            output = " ";
+            attemptsLeft--;
+
+            if (win<1){
+                document.getElementById("guess")
+            }
+
+        }
+
+
+
+        
+
+        alert(answer);
+
+   
+        //function to check for guessed letters
+        function checkLetters(){
+            //setting vars
+
+            //running the for-loop to iterate through the array
+            for (var i = 0;  i < 10;   i++) {
+                console.log(i); 
+                }
+        }
+
+        document.getElementsByClassName(players[0])
+        
+       
+        // Let's start by grabbing references to our elements.        
+        var writeText = document.getElementById("user-text");
+
+        // set up game
+
+        // updating the page
+
+        // function that counts the wrong letters
+
+        // display hint (dashes) that is the word i have to guess
+
+        // re-start the game (reset the variables, guesses, set up game) from 0.
+
+        // function that checks if the user has won
+
+        // initialize the game when the page loads
+
+       
+        // Next, we give JavaScript a function to execute when our event fires.
+        document.onkeyup = (event) => writeText.textContent = event.key;
+
+        </script>
     </body> 
 
 </html>
